@@ -199,7 +199,8 @@ def ShowVideos(title, url):
     
     for video in videos:
 
-        vid_url = video['canonicalURL']
+        try: vid_url = video['canonicalURL']
+        except: continue
 
         # catch any bad links that get sent here
         if not ('/video-clips/') in vid_url and not ('/full-episodes/') in vid_url:
